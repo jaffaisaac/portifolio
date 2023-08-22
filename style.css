@@ -1,0 +1,653 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap');
+
+/* reset */
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    list-style: none;
+    text-decoration: none;
+    font-family: 'Poppins',sans-serif;
+    /* border: 1px solid red; */
+}
+html{
+    /* background: #e3e9f7; */
+    scroll-behavior: smooth;
+}
+img{
+    display: block;
+}
+
+/******************************************************************************************************/
+/* header section start */
+header{
+    width: 100%;
+    height: 70px;
+    background-color: #fefefe;
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 40px;
+    margin:  0 auto;
+    position: fixed;
+    z-index: 9999;
+}
+.log{
+    max-width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: end;
+}
+.log img{
+max-width: 60%;
+height: auto;
+}
+nav .log{
+ display: none;
+}
+nav ul{
+    display: flex;
+}
+nav ul li a{
+    color: #212526;
+    display: block;
+    font-weight: 600;
+    padding: 8px 18px;
+    border-radius: 30px;
+    transition: 0.2s;
+    opacity: 0.7;
+
+}
+nav li a::after{
+    content: "";
+    width: 0px;
+    height: 3px;
+    background-color: coral;
+    margin: auto;
+    display: block;
+    margin-top:8px ;
+}
+nav li a:hover::after{
+    width: 100%;
+    transition: width 0.3s linear;
+}
+nav li a:hover{
+    color: coral;
+}
+.hamburger {
+    display: none;
+    font-size: 30px;
+    padding:10px ;
+}
+.sideBar{
+    display: none;
+    width: 100%;
+    height: 33.5vh;
+    background-color: rgb(163, 164, 216);
+    text-align: center;
+    z-index: 9999;
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+.sideBar ul li {
+    width: 100%;
+    padding: 13px;
+    font-size: 1.4rem;
+}
+.sideBar ul li a{
+    color: #fff;
+   min-width: 100%;
+    min-height: 100%;
+    display: block;
+    font-size: 2rem;
+    border-bottom: 2px solid;
+}
+.sideBar ul li:hover {
+    background-color: #212526;
+}
+
+/* End  of the hearder section */
+/*****************************************************************************************************/
+
+/* body section start */
+/* All sections */
+section{
+    width: 100%;
+    height: auto;
+}
+/* ! ******section 1 ******** */
+.homesection{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+   
+
+}
+/* inforsection styling */
+.homesection .homeInfor{
+    width: 40%;
+    height: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+.homeInfor h1{
+ font-size: 3rem;  
+ width: 100%;
+ opacity: 0.8;
+
+}
+.homeInfor h4{
+ width: 100%;
+    font-size: 1.4rem;
+    opacity: 0.6;
+}
+h1,  h6{
+padding-top: 1.3rem;
+padding-left: 5rem;
+}
+.wrapper{
+    width: 100%;
+    display: flex;
+}
+.wrapper .dynamic_text{
+    margin-left: 5rem;
+    line-height: 30px;
+    height: 30px;
+    overflow: hidden;
+   
+}
+.dynamic_text li{
+    list-style: none;
+    color: #ff4c29;
+    font-weight: 400;
+    position: relative;
+    top: 0;
+    /* here is the second animation  */
+    animation: slide 12s steps(3) infinite;/*this is moving up and down ofthe words*/
+
+}
+@keyframes slide{
+    100%{
+        top: -85px;
+    }
+}
+.dynamic_text li{
+    position: relative;
+}
+.dynamic_text li::after{
+    content: "";
+    position: absolute;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: #fff;
+    border-left:2px solid #ff4c29;
+    animation: typing 3s steps(17) infinite;
+}
+/* this is for the typing  */
+@keyframes typing{
+    20%,
+    0%{
+        left:calc(100% + 30px);
+    }
+    100%{
+        left: 0;
+    }
+}
+
+.btn-cv{
+    background-color: #1e90ff ;
+    font-size: 18px;
+    width: 160px;
+    padding:10px;
+    text-align: center;
+    text-decoration: none;
+    color: #fff;
+    border-radius: 5px;
+    cursor: pointer;
+    margin: 5% 0  0 -45%;
+    box-sizing: 0px 0px 10px rgba(0,0,0,0.1);
+    transition: box-shadow,transform 0.3s;
+}
+.btn-cv:hover, .btn-cv:focus,.btn-cv:active{
+    box-shadow: 0px 0px 20px rgba(0,0,0,0.5);
+    transform: scale(1.1);
+}
+/* homeimage styling */
+.homesection .homeImage{
+    width: 50%;
+    height: 100%;
+    overflow: hidden;
+}
+.profileImage{
+    width: 66%;
+    background-color: none;
+}
+.profileImage img{
+    width: 130%;
+    height: auto;
+    min-width: 100%;
+}
+/* skill and expertise or Aboutsme section */
+.AboutMe ,#ContactMe ,#MoreInfor ,#ProjectsDone{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+   gap: 2rem;
+   flex-direction: column;
+}
+
+.AboutMe .bodySection2,
+#ProjectsDone .bodySection3,
+#ContactMe .bodySection4,
+#MoreInfor .bodySection5
+{
+    width: 100%;
+    height: auto;
+}
+
+/* ! ***** New section 2 aboutMe  */
+#about{
+   display: flex;
+   align-items: center;
+   justify-content: space-evenly;
+}
+#about .about_image{
+    width: 30%;
+    height: 550px;
+   
+}
+#about .about_image img{
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: cover;
+    margin: auto;
+    border: 2px solid #ccc;
+    border-radius: 10px;
+    padding: 5px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+.aboutme_Message{
+    width: 50%;
+    height: auto;
+    /* border: 2px solid black; */
+}
+.aboutme_Message h1{
+    padding: 10px 0;
+    font-size: 40px;
+}
+.aboutme_Message h3{
+    padding: 10px 0;
+    font-size: 25px;
+    opacity: 0.9;
+
+}
+.aboutme_Message p{
+    padding: 10px 0;
+    opacity: 0.7;
+}
+/* ! ******* icon section 3 */
+/** the header  */
+.for_me{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+.for_me .header_section2,.header_section3{
+    text-align: center;
+    padding: 30px;
+    font-size: 30px;
+    font-weight: bolder;
+}
+.allnewlinks{
+    /* border: 3px solid lime; */
+    width: 85%;
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    grid-template-columns: repeat(auto-fit ,minmax(200px ,1fr));
+    padding: 20px;
+}
+.box_icon{
+    width: 200px;
+    height: auto;
+    transition: all ease-in-out 0.5s;
+}
+.box_icon:hover,.box_icon:focus,.box_icon:active{
+transform: scale(1.2);
+}
+.icon-size{
+    width: 200px;
+    height: auto;
+    object-fit: contain;
+    font-size: 80px;
+    text-align: center;
+     cursor: pointer;
+     
+    
+}
+.allnewlinks .imgs{
+    width: 120px;
+    height: 100px;
+    filter:grayscale(100%);
+    margin: auto;
+}
+#wordPoint{
+    text-align: center;
+}
+
+
+
+/*! ***** section 4 projects ********  */
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.container .card{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 80%;
+    margin: 20px 0;
+    padding: 20px;
+    cursor: pointer;
+    border-radius: 20px;
+    background-color: #712A9F;
+    box-shadow: 0px 2px 5px ;
+    transition: all ease-in 0.2s;
+    color: #fcf;
+
+}
+.container .card:hover{
+    box-shadow: 0px 2px 10px ;
+    transform: scale(1.01);
+    background-color:#9F2A93;
+    color: #fff;
+    font-size: 14px;
+}
+@keyframes move {
+    50%{
+    }
+    100%{
+
+    }
+}
+
+.project_details{
+    width: 50%;
+   
+}
+.project_image{
+    width: 50%;
+    height: 200px;
+}
+.project_image img{
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+/*! *********** section 5 *****************/
+.folloMe  {
+    height: 70px;
+    width: 100%;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    contain: content;
+    background: #0b0423cc;
+    color: #fff;
+ 
+
+
+}
+.socialink ul a i{
+    font-size: 2rem;
+    padding: 0px 10px ;
+    cursor: pointer;
+    margin: 1.2rem;
+    transition: all ease 0.5s;
+    color: #fff;
+   
+    
+}
+.socialink ul i:hover{
+transform: scale(1.2);
+}
+.folloMe_header{
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    height: 40px;
+    width: 100%;
+    background: #0b0423e3;
+    color: #fff;
+
+}
+.folloMe_header .copyright{
+    font-size: 1.2rem;
+    font-weight: 600;
+    opacity: 0.7;
+}
+
+/* body section End */
+/*************************************************************************************************************/
+  @media screen and (max-width: 768px) {
+    /** this is in the new about me  */
+    .about_image{
+        display: none;
+    }
+    .aboutme_Message{
+        width: 100%;
+    }
+    .aboutme_Message h1{
+        padding: 5px 0;
+        font-size: 30px;
+    }
+    .aboutme_Message h3{
+        padding: 10px 0;
+        font-size: 17px;
+        opacity: 0.9;
+    
+    }
+  
+    .card {
+      width: 100%;
+      
+    }
+    .input_wrap{
+        flex-direction: column;
+        gap: 2rem;
+    }
+    .input_wrap input[type="text"], .input_wrap input[type="number"], .input_wrap input[type="email"]{
+        width: 100%;
+    }
+    .input_wrap label:first-child {
+       margin-left: 20px;
+    }
+    textarea{
+        width: 100%;
+    }
+    #ContactMe .bodySection4 form{
+        margin-bottom: 40%;
+    }
+    .socialink ul i{
+        font-size: 2rem;
+        padding: 0px  ;
+        margin: 0.7rem;
+        
+    }
+    #ContactMe form{
+        width: 100%;
+        height: auto;
+        margin-bottom: 20px;
+        flex-direction: column;
+        border: none;
+        border-radius: 0px;
+    }
+    #ContactMe form h1{
+        width: 90%;
+        font-size: 1.9rem;
+        margin: auto;
+        padding: 10px;
+        color: #fff;
+        word-break: break-all;
+        }
+        #ContactMe form textarea{
+                width: 90%;
+        }  
+  }
+@media only  screen and (max-width: 1100px){
+    .sideBar.off{
+        display: block;
+    }
+    .hamburger{
+        display: block;
+    }
+
+
+    header{
+        width: 100%;
+        padding: 0 20px;
+
+    }
+    nav{
+        position: absolute;
+        left: -700px;
+        top: 0;
+        z-index: 999;
+        width: 100%;
+        height: 100vh;
+        background-color: #746c6ccb;
+       width: 70%;
+        height: auto;
+        transition: 0.2s;
+        box-shadow: 2px 0  20px 0 rgba(0, 0, 0, 0);
+        margin-left: -11%;
+    }
+   
+
+   
+    nav .log{
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        margin-left: 30px;
+        height: 70px;
+
+    }
+    nav.show{
+        
+        display: none;
+    }
+    nav ul li a{
+        margin-bottom: 5px;
+        padding: 10px 15px;
+        border-radius: 5px;
+    }
+    nav ul{
+        display: block;
+        padding: 0 20px;
+        margin-top: 30px;
+    }
+    .hamburger{
+        display: block;
+    }
+    /* section2 media Query */
+    .AboutMe .bodySection2{
+        flex-direction: column;
+        gap: 1.4rem;
+    }
+    .AboutMe .bodySection2 .aboutme_animate{
+        gap: 2rem;
+       
+    }
+    .AboutMe .bodySection2 .aboutme_divide{
+        /* transform: rotate(90deg); */
+        width: 100%;
+        height: 2px;
+        border-radius: 0px;
+    }
+    .AboutMe .bodySection2 .aboutme_animate{
+        width: 100%;
+        height:75vh;
+        padding: 0px;
+        background-color: aqua;
+       
+    }
+    .bodySection2 .aboutme_animate p{
+        color: #000;
+        margin-top: 5px;
+    }
+    .progress{
+        margin-top: -30px;
+    }
+}
+@media only screen and (max-width:1048){
+    .homesection{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .homeImage{
+        height: 200px;
+    }
+}
+/* this for homesectio and more  */
+@media only screen and (max-width:700px){
+    .homesection{
+        flex-direction: column;
+        flex-wrap: wrap;
+    }
+    .homeInfor h1{
+        font-size: 2rem;  
+        margin-top: 2em;
+        opacity: 0.8;
+       }
+    h1, h4, h6{
+        padding-top: 1rem;
+        padding-left: 1rem;
+        }
+        .homesection .homeImage{
+            height: 400px;
+            width: 100%;
+        }
+        .aboutme_divide{
+            display: none;
+        }
+       
+}
+/* for the smallest screen */
+@media screen and (max-width:600px){
+    .container .card{
+        flex-direction: column;
+    width: 80%;
+  
+    cursor: pointer;
+    border-radius: 20px;
+    background-color: #d1c7c79d;
+    box-shadow: 0px 2px 5px ;
+    transition: all ease-in 0.2s;
+    color: #000;
+    }
+    .project_details{
+        width: 100%;
+       
+    }
+    .project_image{
+        width: 100%;
+        height: 200px;
+    }
+    .project_image img{
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+    }
+}
